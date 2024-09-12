@@ -1,6 +1,10 @@
-# Bandlab Project
+# Tamagotchi Project
 
 Q: What is this project?
 
-A: This project is a website that displays the statistics of my Bandlab account. These statistics will update constantly through the use of a database(mySQL) and a server written in Node.js.
+A: This is a website created by me that hosts a tamagotchi.
+
+1. Features
+
+To be added...
 
