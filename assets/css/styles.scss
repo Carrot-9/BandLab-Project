@@ -1,6 +1,7 @@
 // Variables //
 
 $border-color: #000000;
+$MainMenuFontColor: #ffffff;
 
 // Variables //
 
@@ -17,6 +18,54 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+// Main Menu //
+.MainMenu {
+    position: absolute;
+    top: 50px;
+    width: 300px;
+    height: 500px;
+    padding: 10px;
+    border: solid 5px $border-color;
+    border-radius: 10px;
+    background: linear-gradient(#4483f7,#d3d342);
+    line-height: 3;
+    font-family: monospace;
+    font-size: 1vw;
+
+.MainMenuTitle {
+    font-size: 1.5vw;
+    color: #f7e81c;
+    text-decoration: underline;
+
+    }
+
+    .MainMenuList {
+        display: flex;
+        flex-direction: column;
+
+        a:link {
+            color: $MainMenuFontColor;
+               
+        }
+
+        a:hover {
+            color: #000000;
+        }
+
+        a:visited {
+            color: $MainMenuFontColor;
+            
+        }
+
+        .MainMenuListDescription {
+            font-size: 0.5vw;
+            color: $MainMenuFontColor;
+                
+        }
+
+        }
 }
 
 // Tamagotchi //
@@ -39,15 +88,44 @@ html, body {
         height: 600px;
         border: solid 10px $border-color; 
         border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; 
+    
+    .TamagotchiEggTitle {
+        position: absolute;
+        top: 100px;
+        font-family: monospace;
+        font-size: 2vw;
+        color: #4483f7;
+        
+    }
 
         .TamagotchiScreen {
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #DCDCDC;
             width: 250px;
             height: 250px;
             border: solid 5px $border-color;
             border-radius: 50px;
+
+            .TamagotchiScreenHotcaketchi {
+                width: 150px;
+                height: 150px;
+                animation-name: TamagotchiSpin;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }  
         }
+    }
+}
+
+// Animations //
+@keyframes TamagotchiSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
     }
 }
 
