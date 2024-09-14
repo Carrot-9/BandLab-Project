@@ -11,7 +11,7 @@
 <body>
 <!--Main Menu-->
 <aside class="MainMenu"> 
-    <div class="MainMenuTitle">Stats</div>
+    <header class="MainMenuTitle">Stats</header>
     <section class="MainMenuList">
         <a href="#">Health</a>
         <div class="MainMenuListDescription">Displays the health of the Tamagotchi.</div>
@@ -33,11 +33,13 @@
     <p></p>
 </aside>
 
-
 <!--Tamagotchi-->
 <main class="TamagotchiContainer">
+    <div class="TamagotchiEggFeedButton" id="FeedTamagotchi"></div>
+    <div class="TamagotchiEggPetButton" id="PetTamagotchi"></div>
+    <div class="TamagotchiEggPlayButton" id="PlayTamagotchi"></div>
     <section class="TamagotchiEgg">
-        <div class="TamagotchiEggTitle">Hotcaketchi</div>
+        <header class="TamagotchiEggTitle">Hotcaketchi</header>
             <div class="TamagotchiScreen">
                 <img class="TamagotchiScreenHotcaketchi" src="assets/static/Hotcaketchi.webp" alt="Hotcaketchi, the Tamagotchi Character">
             </div>
@@ -46,6 +48,6 @@
 <!--Notifications List-->
 <aside class="NotificationList">
 </aside>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>

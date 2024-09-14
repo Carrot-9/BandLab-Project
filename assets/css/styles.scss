@@ -5,6 +5,18 @@ $MainMenuFontColor: #ffffff;
 
 // Variables //
 
+// Mixins //
+
+@mixin TamagotchiEggButtonTheme {
+    width: 40px;
+    height: 40px;
+    background-color: #DCDCDC ;
+    border: solid 3px $border-color;
+    border-radius: 50%;
+}
+
+// Mixins //
+
 // Background //
 html, body {
 
@@ -81,66 +93,91 @@ html, body {
 
 }
 
-// Tamagotchi //
+/* Tamagotchi Container */
 .TamagotchiContainer {
-
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    .TamagotchiEgg {
+/* Tamagotchi Egg */
+.TamagotchiEgg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#ADD8E6, #FFFF00);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 500px;
+    height: 600px;
+    border: solid 10px $border-color; 
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+}
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(#ADD8E6, #FFFF00);
-        background-repeat:no-repeat;
-        background-attachment:fixed;
-        
-        width: 500px;
-        height: 600px;
-        border: solid 10px $border-color; 
-        border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; 
+/* Egg Title */
+.TamagotchiEggTitle {
+    position: absolute;
+    top: 100px;
+    font-family: monospace;
+    font-size: 2vw;
+    color: #4483f7;
+}
+
+// Tamagotchi Buttons //
+.TamagotchiEggFeedButton {
+    @include TamagotchiEggButtonTheme();
+    position: absolute;
+    bottom: 125px;
+    left: 600px;
+
+}
+
+.TamagotchiEggPetButton {
+    @include TamagotchiEggButtonTheme();
+    position: absolute;
+    bottom: 100px;
     
-    .TamagotchiEggTitle {
-        position: absolute;
-        top: 100px;
-        font-family: monospace;
-        font-size: 2vw;
-        color: #4483f7;
-        
-    }
-
-        .TamagotchiScreen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #DCDCDC;
-            width: 250px;
-            height: 250px;
-            border: solid 5px $border-color;
-            border-radius: 50px;
-
-            .TamagotchiScreenHotcaketchi {
-                width: 150px;
-                height: 150px;
-                animation-name: TamagotchiSpin;
-                animation-duration: 3s;
-                animation-iteration-count: infinite;
-            }  
-        }
-    }
 }
 
-// Animations //
+.TamagotchiEggPlayButton {
+    @include TamagotchiEggButtonTheme();
+    position: absolute;
+    bottom: 125px;
+    right: 600px;
+
+}
+
+/* Tamagotchi Screen */
+.TamagotchiScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DCDCDC;
+    width: 250px;
+    height: 250px;
+    border: solid 5px $border-color;
+    border-radius: 50px;
+}
+
+/* Screen Character */
+.TamagotchiScreenHotcaketchi {
+    width: 150px;
+    height: 150px;
+    animation-name: TamagotchiSpin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* Tamagotchi Spin Animation */
 @keyframes TamagotchiSpin {
-    from {
-        transform: rotate(0deg);
+    from { 
+        transform: rotate(0deg); 
     }
-    to {
-        transform: rotate(359deg);
+    to { 
+        transform: rotate(360deg); 
     }
 }
+
 
 
 

@@ -57,12 +57,15 @@ html, body {
   border: solid 5px #000000;
 }
 
+/* Tamagotchi Container */
 .TamagotchiContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.TamagotchiContainer .TamagotchiEgg {
+
+/* Tamagotchi Egg */
+.TamagotchiEgg {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,14 +77,50 @@ html, body {
   border: solid 10px #000000;
   border-radius: 50% 50% 50% 50%/70% 70% 30% 30%;
 }
-.TamagotchiContainer .TamagotchiEgg .TamagotchiEggTitle {
+
+/* Egg Title */
+.TamagotchiEggTitle {
   position: absolute;
   top: 100px;
   font-family: monospace;
   font-size: 2vw;
   color: #4483f7;
 }
-.TamagotchiContainer .TamagotchiEgg .TamagotchiScreen {
+
+.TamagotchiEggFeedButton {
+  width: 40px;
+  height: 40px;
+  background-color: #DCDCDC;
+  border: solid 3px #000000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 125px;
+  left: 600px;
+}
+
+.TamagotchiEggPetButton {
+  width: 40px;
+  height: 40px;
+  background-color: #DCDCDC;
+  border: solid 3px #000000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100px;
+}
+
+.TamagotchiEggPlayButton {
+  width: 40px;
+  height: 40px;
+  background-color: #DCDCDC;
+  border: solid 3px #000000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 125px;
+  right: 600px;
+}
+
+/* Tamagotchi Screen */
+.TamagotchiScreen {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +130,9 @@ html, body {
   border: solid 5px #000000;
   border-radius: 50px;
 }
-.TamagotchiContainer .TamagotchiEgg .TamagotchiScreen .TamagotchiScreenHotcaketchi {
+
+/* Screen Character */
+.TamagotchiScreenHotcaketchi {
   width: 150px;
   height: 150px;
   animation-name: TamagotchiSpin;
@@ -99,11 +140,12 @@ html, body {
   animation-iteration-count: infinite;
 }
 
+/* Tamagotchi Spin Animation */
 @keyframes TamagotchiSpin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=styles.css.map */
