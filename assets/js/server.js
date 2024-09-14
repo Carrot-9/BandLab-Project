@@ -9,13 +9,13 @@ app.listen(
     () => console.log(`Server is Running On http://localhost:${PORT}`)
 )
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'tamagotchidb'
+  password: 'process.env.password',
+  database: 'process.env.database'
 });
 
 db.connect((error) => {
