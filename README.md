@@ -2,9 +2,7 @@
 
 Q: What is this project?
 
-A: This is a website created by me that hosts a tamagotchi.
+A: This is a website created by me that hosts a Tamagotchi(Hotcaketchi).
 
-1. Features
 
-To be added...
 
