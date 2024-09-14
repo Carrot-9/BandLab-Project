@@ -1,13 +1,12 @@
-const http = require('http'); 
+const express = require('express'); 
 
-module.exports = http;
+const app = express();
 
-const server = http.createServer((req, res) => {
+const PORT = 3000
 
 
-    res.end();
-});
+app.listen(
+    PORT, 
+    () => console.log(`Server is Running On http://localhost:${PORT}`)
+)
 
-server.listen(3000, () => {
-    console.log("Server is Running on Port 3000.");
-});
