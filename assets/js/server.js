@@ -2,7 +2,8 @@ const express = require('express');
 
 const app = express();
 
-const PORT = 3000
+const PORT = 3000;
+
 
 app.listen(
     PORT, 
@@ -21,7 +22,8 @@ const db = mysql.createConnection({
 });
 
 db.connect((error) => {
-  if (error) throw error;
+  if (error) throw error; 
   console.log('MySQL connected');
 });
+
 
