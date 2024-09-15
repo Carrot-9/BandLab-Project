@@ -73,7 +73,7 @@ html, body {
         }
 
         .MainMenuListDescription {
-            font-size: 0.75vw;
+            font-size: 1vw;
             color: $MainMenuFontColor;
                 
         }
@@ -83,13 +83,17 @@ html, body {
 
 // Sub Menu //
 .SubMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 20px;
     width: 320px;
     height: 50px;
     background: linear-gradient(#4483f7,#d3d342);
-    color: $MainMenuFontColor;
     border: solid 5px $border-color;
+    font-size: 1.5vw ;
+    color: $MainMenuFontColor;
 
 }
 
@@ -177,9 +181,3 @@ html, body {
         transform: rotate(360deg); 
     }
 }
-
-
-
-
-
-

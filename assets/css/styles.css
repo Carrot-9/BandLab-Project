@@ -43,18 +43,22 @@ html, body {
   color: #ffffff;
 }
 .MainMenu .MainMenuList .MainMenuListDescription {
-  font-size: 0.75vw;
+  font-size: 1vw;
   color: #ffffff;
 }
 
 .SubMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 20px;
   width: 320px;
   height: 50px;
   background: linear-gradient(#4483f7, #d3d342);
-  color: #ffffff;
   border: solid 5px #000000;
+  font-size: 1.5vw;
+  color: #ffffff;
 }
 
 /* Tamagotchi Container */
