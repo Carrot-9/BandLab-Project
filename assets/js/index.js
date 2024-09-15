@@ -1,3 +1,7 @@
+// Display Health //
+
+
+// Display Hunger //
 const GetHunger = document.getElementById("FetchHungerLink");
 const GetHungerDisplay = document.getElementById("DisplayHunger");
 
