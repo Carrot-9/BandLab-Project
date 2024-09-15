@@ -1,23 +1,28 @@
 const express = require('express'); 
+const cors = require('cors');
 const app = express();
 
 const PORT = 3000;
 
 app.use(express.json());
 
-app.get('/api/hunger/:id', (req,res) => {
+app.use(cors());
+
+app.get('/api/hunger/:id', async (req,res) => {
   const id = req.params.id;
-  db.query('SELECT hunger FROM tamagotchi_stats WHERE id = ?', [id],(error, results) => {
-    if(error) {
-      console.error("Database Connection Error")
-      return res.status(500).json({error: 'Database query error'});
-    }
+  try {
+    const [results] = await db.query('SELECT hunger FROM tamagotchi_stats WHERE id = ?', [id]);
+
     if(results.length === 0) {
       console.error("hunger does not exist.")
       return res.status(404).json({error: 'hunger does not exist.'});
     }
-    res.json(results);
-  });
+    res.json({hunger: results[0].hunger});
+
+  }catch(error) {
+    console.error("Database query error:", error)
+    res.status(500).json({ error: 'Database query error' });
+  }
 });
 
 app.listen(
@@ -32,7 +37,7 @@ require('dotenv').config();
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: process.env.password,
+  password: process.env.PASSWORD,
   database: 'tamagotchidb'
 }).promise();
 
@@ -42,13 +47,17 @@ db.connect((error) => {
 });
 
 async function ShowStats() {
+  try {
 const [rows] = await db.query("SELECT * FROM tamagotchi_stats");
+console.log(rows);
 return rows; 
+  } catch(error) {
+    console.error("An Error occured:", error);
+  }
   }
 
   (async () => {
-const stats = await ShowStats();
-console.log(stats);
+ await ShowStats();
   })().catch(err => {
     console.error("Error has occured:", err)
   });

@@ -20,7 +20,7 @@ html, body {
   border: solid 5px #000000;
   border-radius: 10px;
   background: linear-gradient(#4483f7, #d3d342);
-  line-height: 2.5;
+  line-height: 4;
   font-family: monospace;
   font-size: 1vw;
 }
