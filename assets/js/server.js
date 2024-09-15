@@ -4,7 +4,6 @@ const app = express();
 
 const PORT = 3000;
 
-
 app.listen(
     PORT, 
     () => console.log(`Server is Running On http://localhost:${PORT}`)
@@ -18,7 +17,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: process.env.password,
-  database: process.env.database
+  database: 'tamagotchidb'
 });
 
 db.connect((error) => {
