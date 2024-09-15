@@ -13,9 +13,7 @@ const res = await fetch(url, {method:"GET"});
 const data = await res.json();
 console.log(data);
 
-const p = document.createElement('p');
-p.textContent = `Hunger Level: ${data.hunger}/100`;
-GetHungerDisplay.appendChild(p);
+GetHungerDisplay.textContent = `Hunger Level: ${data.hunger}/100`;
     }catch(error) {
         console.error("An error occured while retrieving GET request.")
     }

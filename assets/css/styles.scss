@@ -43,9 +43,30 @@ html, body {
     border: solid 5px $border-color;
     border-radius: 10px;
     background: linear-gradient(#4483f7,#d3d342);
-    line-height: 4;
+    line-height: 2.5;
     font-family: monospace;
-    font-size: 1vw;
+    font-size: 0.75vw;
+    color: $MainMenuFontColor;
+    }
+
+.MainMenuList {
+    display: flex;
+    flex-direction: column;
+
+    a:link {
+        color: $MainMenuFontColor;
+           
+    }
+
+    a:hover {
+        color: #0a3eb1;
+    }
+
+    a:visited {
+        color: $MainMenuFontColor;
+        
+    }
+}
 
 .MainMenuTitle {
     font-size: 1.5vw;
@@ -54,35 +75,8 @@ html, body {
 
     }
 
-    .MainMenuList {
-        display: flex;
-        flex-direction: column;
-
-        a:link {
-            color: $MainMenuFontColor;
-               
-        }
-
-        a:hover {
-            color: #0a3eb1;
-        }
-
-        a:visited {
-            color: $MainMenuFontColor;
-            
-        }
-
-        .MainMenuListDescription {
-            font-size: 1vw;
-            color: $MainMenuFontColor;
-                
-        }
-
-        }
-}
-
 // Sub Menu //
-.SubMenu {
+.Footer {
     display: flex;
     justify-content: center;
     align-items: center;
