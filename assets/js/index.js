@@ -23,3 +23,4 @@ GetHungerDisplay.textContent = `Hunger Level: ${data.hunger}/100`;
 
 
 
+

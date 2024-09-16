@@ -12,16 +12,22 @@ app.get('/api/hunger/:id', async (req,res) => {
   const id = req.params.id;
   try {
     const [results] = await db.query('SELECT hunger FROM tamagotchi_stats WHERE id = ?', [id]);
-
-    if(results.length === 0) {
-      console.error("hunger does not exist.")
-      return res.status(404).json({error: 'hunger does not exist.'});
-    }
     res.json({hunger: results[0].hunger});
-
   }catch(error) {
-    console.error("Database query error:", error)
-    res.status(500).json({ error: 'Database query error' });
+    console.error("Error Retreiving 'hunger':", error);
+    res.status(500).json({ error: "Error Retreiving 'hunger':"});
+  }
+});
+
+app.post('/api/hunger/:id', async (req,res) => {
+  const id = req.params.id;
+  try {
+  const UpdateHunger = req.body;
+  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 10 WHERE id =?', [id]);
+  res.status(200).json({ message:"Updated Succesfully."})
+  res.send(UpdateHunger);
+  } catch(error) {
+    console.error("Error Updating 'hunger':", error);
   }
 });
 
