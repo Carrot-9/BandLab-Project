@@ -19,15 +19,14 @@ app.get('/api/hunger/:id', async (req,res) => {
   }
 });
 
-app.post('/api/hunger/:id', async (req,res) => {
+app.get('/api/health/:id', async (req,res) => {
   const id = req.params.id;
   try {
-  const UpdateHunger = req.body;
-  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 10 WHERE id =?', [id]);
-  res.status(200).json({ message:"Updated Succesfully."})
-  res.send(UpdateHunger);
-  } catch(error) {
-    console.error("Error Updating 'hunger':", error);
+    const [results] = await db.query('SELECT health FROM tamagotchi_stats WHERE id = ?', [id]);
+    res.json({health: results[0].health});
+  }catch(error) {
+    console.error("Error Retreiving 'health':", error);
+    res.status(500).json({ error: "Error Retreiving 'health':"});
   }
 });
 
