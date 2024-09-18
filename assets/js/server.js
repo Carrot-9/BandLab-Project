@@ -1,16 +1,61 @@
 const express = require('express');
- const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
 
 const PORT = 3000;
 
+// Middleware //
+
 app.use(express.json());
 
 app.use(bodyParser.json())
 
 app.use(cors());
+
+app.listen(
+  PORT, 
+  () => console.log(`Server is Running On http://localhost:${PORT}`)
+)
+
+// Database //
+require('dotenv').config();
+
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: process.env.PASSWORD,
+  database: 'tamagotchidb'
+}).promise();
+
+
+ db.connect(() => {
+  try {
+  console.log('MySQL connected');
+}catch(error) {
+  console.error("Error Connecting to MySql Database.")
+}
+});
+
+async function ShowStats() {
+  try {
+const [rows] = await db.query("SELECT * FROM tamagotchi_stats");
+console.log(rows);
+return rows; 
+  } catch(error) {
+    console.error("An Error occured:", error);
+  }
+  }
+
+  (async () => {
+ await ShowStats();
+  })().catch(err => {
+    console.error("Error has occured:", err)
+  });
+
+// API Requests //
 
 app.get('/api/hunger/:id', async (req,res) => {
   const id = req.params.id;
@@ -78,60 +123,22 @@ app.get('/api/weight/:id', async (req,res) => {
   }
 });
 
-app.post('/api/hunger/:id', async (req,res) => {
+app.post('/api/feed/:id', async (req,res) => {
   try {
-   await UpdateHungerValues(req);
-   res.status(200).json({ message:"Updated Succesfully."})
+  await UpdateHungerValues(req);
+   res.status(200).json({message: "Updated Sucessfully."})
   } catch(error) {
     console.error("Error Updating 'hunger':", error);
   }
 });
 
 async function UpdateHungerValues(req) {
-  const id = req.id;
   try {
-  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id =?', [id]);
-  }catch(error) {
-    console.error("Error With Function 'UpdateHungerValues'", error)
+  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id = 1');
+  } catch(error) {
+    console.error("Error With Function 'UpdateHungerValues'", error);
   }
 }
-
-app.listen(
-  PORT, 
-  () => console.log(`Server is Running On http://localhost:${PORT}`)
-)
-
-const mysql = require('mysql2');
-
-require('dotenv').config();
-
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: process.env.PASSWORD,
-  database: 'tamagotchidb'
-}).promise();
-
-db.connect((error) => {
-  if (error) throw error; 
-  console.log('MySQL connected');
-});
-
-async function ShowStats() {
-  try {
-const [rows] = await db.query("SELECT * FROM tamagotchi_stats");
-console.log(rows);
-return rows; 
-  } catch(error) {
-    console.error("An Error occured:", error);
-  }
-  }
-
-  (async () => {
- await ShowStats();
-  })().catch(err => {
-    console.error("Error has occured:", err)
-  });
 
 
 
