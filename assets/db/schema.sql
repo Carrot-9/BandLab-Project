@@ -26,3 +26,5 @@ ALTER TABLE tamagotchi_stats
     MODIFY COLUMN weight FLOAT DEFAULT 30;
 
 
+
+
