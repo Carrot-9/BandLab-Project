@@ -25,7 +25,7 @@ GetHungerDisplay.textContent = `Hunger Level: ${data.hunger}/100`;
 const GetHealth = document.getElementById("FetchHealthLink");
 const GetHealthDisplay = document.getElementById("DisplayHealth");
 
-const HealthUrl = 'http://localhost:3000/api/health/:id'
+const HealthUrl = 'http://localhost:3000/api/health/1'
 
 GetHealth.addEventListener('click', GetHealthInfo);
 
@@ -37,14 +37,108 @@ const res = await fetch(HealthUrl, {method:"GET"});
 const data = await res.json();
 console.log(data);
 
-GetHealthDisplay.textContent = `Hunger Level: ${data.health}/100`;
+GetHealthDisplay.textContent = `Health Level: ${data.health}/100`;
     }catch(error) {
         console.error("An error occured while retrieving GET request.")
     }
      
 }
 
+// Display Happiness Level //
 
+const GetHappinessLevel = document.getElementById("FetchHappinessLink");
+const GetHappinessDisplay = document.getElementById("DisplayHappinessLevel");
+
+const HappinessUrl = 'http://localhost:3000/api/happiness/1'
+
+GetHappinessLevel.addEventListener('click', GetHappinessInfo);
+
+async function GetHappinessInfo(event) {
+    event.preventDefault();
+    try {
+     
+const res = await fetch(HappinessUrl, {method:"GET"});
+const data = await res.json();
+console.log(data);
+
+GetHappinessDisplay.textContent = `Happiness Level: ${data.happiness_level}/100`;
+    }catch(error) {
+        console.error("An error occured while retrieving GET request.")
+    }
+     
+}
+
+// Display Friendship Level //
+
+const GetFriendshipLevel = document.getElementById("FetchFriendshipLink");
+const GetFriendshipDisplay = document.getElementById("DisplayFriendshipLevel");
+
+const FriendshipUrl = 'http://localhost:3000/api/friendship/1'
+
+GetFriendshipLevel.addEventListener('click', GetFriendshipInfo);
+
+async function GetFriendshipInfo(event) {
+    event.preventDefault();
+    try {
+     
+const res = await fetch(FriendshipUrl, {method:"GET"});
+const data = await res.json();
+console.log(data);
+
+GetFriendshipDisplay.textContent = `Friendship Level: ${data.friendship_level}/100`;
+    }catch(error) {
+        console.error("An error occured while retrieving GET request.")
+    }
+     
+}
+
+// Display Age //
+
+const GetAge = document.getElementById("FetchAgeLink");
+const GetAgeDisplay = document.getElementById("DisplayAge");
+
+const AgeUrl = 'http://localhost:3000/api/age/1'
+
+GetAge.addEventListener('click', GetAgeInfo);
+
+async function GetAgeInfo(event) {
+    event.preventDefault();
+    try {
+     
+const res = await fetch(AgeUrl, {method:"GET"});
+const data = await res.json();
+console.log(data);
+
+GetAgeDisplay.textContent = `Age: ${data.age} yrs`;
+    }catch(error) {
+        console.error("An error occured while retrieving GET request.")
+    }
+     
+}
+
+// Display Weight 
+
+const GetWeight = document.getElementById("FetchWeightLink");
+const GetWeightDisplay = document.getElementById("DisplayWeight");
+
+const WeightUrl = 'http://localhost:3000/api/weight/1'
+
+GetWeight.addEventListener('click', GetWeightInfo);
+
+async function GetWeightInfo(event) {
+    event.preventDefault();
+    try {
+     
+const res = await fetch(WeightUrl, {method:"GET"});
+const data = await res.json();
+console.log(data);
+
+GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
+    }catch(error) {
+        console.error("An error occured while retrieving GET request.")
+    }
+     
+}
 
 
 
