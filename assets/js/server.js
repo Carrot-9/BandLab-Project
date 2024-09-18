@@ -74,6 +74,20 @@ app.get('/api/weight/:id', async (req,res) => {
   }
 });
 
+app.post('/api/hunger/:id', async (req,res) => {
+  const id = req.params.id;
+  try {
+  const UpdateHunger = req.body;
+  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 1 WHERE id =?', [id]);
+  res.status(200).json({ message:"Updated Succesfully."})
+  res.send(UpdateHunger);
+  } catch(error) {
+    console.error("Error Updating 'hunger':", error);
+  }
+});
+
+
+
 app.listen(
   PORT, 
   () => console.log(`Server is Running On http://localhost:${PORT}`)

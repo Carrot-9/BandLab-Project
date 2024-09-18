@@ -116,7 +116,7 @@ GetAgeDisplay.textContent = `Age: ${data.age} yrs`;
      
 }
 
-// Display Weight 
+// Display Weight //
 
 const GetWeight = document.getElementById("FetchWeightLink");
 const GetWeightDisplay = document.getElementById("DisplayWeight");
@@ -139,6 +139,13 @@ GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
     }
      
 }
+
+// Feed Tamagotchi //
+
+const Feed = 'http://localhost:3000/api/hunger/1'
+
+
+
 
 
 
