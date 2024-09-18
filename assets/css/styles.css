@@ -94,7 +94,6 @@ html, body {
   width: 40px;
   height: 40px;
   background-color: #DCDCDC;
-  border: solid 3px #000000;
   border-radius: 50%;
   position: absolute;
   bottom: 125px;
@@ -105,7 +104,6 @@ html, body {
   width: 40px;
   height: 40px;
   background-color: #DCDCDC;
-  border: solid 3px #000000;
   border-radius: 50%;
   position: absolute;
   bottom: 100px;
@@ -115,11 +113,16 @@ html, body {
   width: 40px;
   height: 40px;
   background-color: #DCDCDC;
-  border: solid 3px #000000;
   border-radius: 50%;
   position: absolute;
   bottom: 125px;
   right: 600px;
+}
+.TamagotchiEggPlayButton button:focus {
+  outline: none;
+}
+.TamagotchiEggPlayButton button:hover {
+  border: solid 5px #000000;
 }
 
 /* Tamagotchi Screen */

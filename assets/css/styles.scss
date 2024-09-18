@@ -11,7 +11,6 @@ $MainMenuFontColor: #ffffff;
     width: 40px;
     height: 40px;
     background-color: #DCDCDC ;
-    border: solid 3px $border-color;
     border-radius: 50%;
 }
 
@@ -142,7 +141,14 @@ html, body {
     position: absolute;
     bottom: 125px;
     right: 600px;
+    
+    button:focus {
+        outline: none;
+    }
 
+    button:hover {
+        border: solid 5px $border-color;
+    }
 }
 
 /* Tamagotchi Screen */

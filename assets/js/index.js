@@ -142,7 +142,7 @@ GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
 
 // Feed Tamagotchi //
 
-const Feed = 'http://localhost:3000/api/hunger/1'
+
 
 
 

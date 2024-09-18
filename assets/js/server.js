@@ -1,10 +1,14 @@
-const express = require('express'); 
+const express = require('express');
+ const bodyParser = require('body-parser');
 const cors = require('cors');
+
 const app = express();
 
 const PORT = 3000;
 
 app.use(express.json());
+
+app.use(bodyParser.json())
 
 app.use(cors());
 
@@ -75,18 +79,22 @@ app.get('/api/weight/:id', async (req,res) => {
 });
 
 app.post('/api/hunger/:id', async (req,res) => {
-  const id = req.params.id;
   try {
-  const UpdateHunger = req.body;
-  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 1 WHERE id =?', [id]);
-  res.status(200).json({ message:"Updated Succesfully."})
-  res.send(UpdateHunger);
+   await UpdateHungerValues(req);
+   res.status(200).json({ message:"Updated Succesfully."})
   } catch(error) {
     console.error("Error Updating 'hunger':", error);
   }
 });
 
-
+async function UpdateHungerValues(req) {
+  const id = req.id;
+  try {
+  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id =?', [id]);
+  }catch(error) {
+    console.error("Error With Function 'UpdateHungerValues'", error)
+  }
+}
 
 app.listen(
   PORT, 
