@@ -15,6 +15,17 @@ app.use(bodyParser.json())
 
 app.use(cors());
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500'); 
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+app.options('/api/feed/:id', cors());
+
+// Run Server //
+
 app.listen(
   PORT, 
   () => console.log(`Server is Running On http://localhost:${PORT}`)
@@ -56,6 +67,10 @@ return rows;
   });
 
 // API Requests //
+
+app.get('/', async (req,res) => {
+  console.log("API Is Running.")
+});
 
 app.get('/api/hunger/:id', async (req,res) => {
   const id = req.params.id;
@@ -124,21 +139,18 @@ app.get('/api/weight/:id', async (req,res) => {
 });
 
 app.post('/api/feed/:id', async (req,res) => {
+  const id = req.params.id;
   try {
-  await UpdateHungerValues(req);
-   res.status(200).json({message: "Updated Sucessfully."})
+  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id = ?', [id]);
+   res.status(200).json();
   } catch(error) {
     console.error("Error Updating 'hunger':", error);
   }
 });
 
-async function UpdateHungerValues(req) {
-  try {
-  await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id = 1');
-  } catch(error) {
-    console.error("Error With Function 'UpdateHungerValues'", error);
-  }
-}
+
+
+
 
 
 

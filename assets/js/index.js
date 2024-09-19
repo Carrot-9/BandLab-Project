@@ -16,7 +16,7 @@ console.log(data);
 
 GetHungerDisplay.textContent = `Hunger Level: ${data.hunger}/100`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error)
     }
      
 }
@@ -39,7 +39,7 @@ console.log(data);
 
 GetHealthDisplay.textContent = `Health Level: ${data.health}/100`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error)
     }
      
 }
@@ -63,7 +63,7 @@ console.log(data);
 
 GetHappinessDisplay.textContent = `Happiness Level: ${data.happiness_level}/100`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error)
     }
      
 }
@@ -87,7 +87,7 @@ console.log(data);
 
 GetFriendshipDisplay.textContent = `Friendship Level: ${data.friendship_level}/100`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error)
     }
      
 }
@@ -111,7 +111,7 @@ console.log(data);
 
 GetAgeDisplay.textContent = `Age: ${data.age} yrs`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error )
     }
      
 }
@@ -135,13 +135,34 @@ console.log(data);
 
 GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
     }catch(error) {
-        console.error("An error occured while retrieving GET request.")
+        console.error("An error occured while retrieving GET request.", error)
     }
      
 }
 
 // Feed Tamagotchi //
 
+const PostFeed = document.getElementById("FeedTamagotchi");
+const PostFeedDisplay = document.getElementById("DisplayFeed");
+
+const FeedUrl = 'http://localhost:3000/api/feed/1'
+
+PostFeed.addEventListener('click', PostFeedInfo);
+
+async function PostFeedInfo(event) {
+    event.preventDefault();
+    try {
+     
+const res = await fetch(FeedUrl, {method:"post"});
+const data = await res.json();
+console.log(data);
+
+PostFeedDisplay.textContent = 'Feeding Tamagotchi...';
+    }catch(error) {
+        console.error("An error occured while retrieving POST request.", error)
+    }
+     
+}
 
 
 
