@@ -15,14 +15,11 @@ app.use(bodyParser.json())
 
 app.use(cors());
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500'); 
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
-
-app.options('/api/feed/:id', cors());
+app.use(cors({
+  origin: 'http://127.0.0.1:5500',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
 
 // Run Server //
 
