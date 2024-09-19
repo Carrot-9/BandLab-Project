@@ -139,7 +139,7 @@ app.post('/api/feed/:id', async (req,res) => {
   const id = req.params.id;
   try {
   await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id = ?', [id]);
-   res.status(200).json();
+   res.status(200).json({message: "Updated Succesfully."});
   } catch(error) {
     console.error("Error Updating 'hunger':", error);
   }

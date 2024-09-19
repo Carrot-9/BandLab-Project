@@ -142,7 +142,10 @@ GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
 
 // Feed Tamagotchi //
 
+document.addEventListener("DOMContentLoaded", () => {
 const PostFeed = document.getElementById("FeedTamagotchi");
+
+
 
 const FeedUrl = 'http://localhost:3000/api/feed/1'
 
@@ -151,6 +154,7 @@ console.log(PostFeed);
 
 async function PostFeedInfo() {
     try { 
+    console.log("PostFeedInfo called");
 const res = await fetch(FeedUrl, {method:"post",
 
 headers: {
@@ -158,12 +162,13 @@ headers: {
     'Accept': 'application/json'
 }
 });
-console.log(res);
+console.log(await res.json());
     }catch(error) {
         console.error("An error occured while retrieving POST request.", error)
     }
      
 }
+});
 
 
 
