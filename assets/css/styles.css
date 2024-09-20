@@ -94,6 +94,8 @@ html, body {
   height: 40px;
   background-color: #DCDCDC;
   border-radius: 50%;
+  font-weight: bold;
+  color: #444cf7;
   position: absolute;
   bottom: 125px;
   left: 600px;
@@ -104,6 +106,8 @@ html, body {
   height: 40px;
   background-color: #DCDCDC;
   border-radius: 50%;
+  font-weight: bold;
+  color: #444cf7;
   position: absolute;
   bottom: 100px;
 }
@@ -113,6 +117,8 @@ html, body {
   height: 40px;
   background-color: #DCDCDC;
   border-radius: 50%;
+  font-weight: bold;
+  color: #444cf7;
   position: absolute;
   bottom: 125px;
   right: 600px;

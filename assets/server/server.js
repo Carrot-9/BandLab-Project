@@ -13,13 +13,12 @@ app.use(express.json());
 
 app.use(bodyParser.json())
 
-app.use(cors());
-
 app.use(cors({
-  origin: 'http://127.0.0.1:5500',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
+  origin: 'http://127.0.0.1:5500', // Allow this origin
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], // Allow these methods
+  allowedHeaders: ['Content-Type'] // Allow this header
 }));
+
 
 // Run Server //
 
@@ -135,7 +134,7 @@ app.get('/api/weight/:id', async (req,res) => {
   }
 });
 
-app.post('/api/feed/:id', async (req,res) => {
+app.patch('/api/feed/:id', async (req,res) => {
   const id = req.params.id;
   try {
   await db.query('UPDATE tamagotchi_stats SET hunger = hunger + 5 WHERE id = ?', [id]);
