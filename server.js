@@ -15,7 +15,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type'] 
 }));
 
-app.use('/api/tamagotchi', 'tamagotchiRoutes')
+app.use('/api/tamagotchi', tamagotchiRoutes)
 
 app.listen(
   PORT, 
