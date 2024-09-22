@@ -1,4 +1,4 @@
-USE tamagotchidb;
+ USE tamagotchidb;
 
 CREATE TABLE IF NOT EXISTS tamagotchi_stats (
 

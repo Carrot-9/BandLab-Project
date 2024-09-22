@@ -2,7 +2,7 @@
 
 Q: What is this project?
 
-A: This is a website created by me that hosts a Tamagotchi(Hotcaketchi).
+A: This is a full stack web application that features a fully functional Tamagotchi. 
 
 
 

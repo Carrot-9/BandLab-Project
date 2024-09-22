@@ -13,6 +13,9 @@
             "database": "tamagotchidb",
             "username": "root"
         }
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }
 
