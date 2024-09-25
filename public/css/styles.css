@@ -142,16 +142,4 @@ html, body {
 .TamagotchiScreenCharacter {
   width: 15vw;
   height: 30vh;
-  animation-name: TamagotchiSpin;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes TamagotchiSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }/*# sourceMappingURL=styles.css.map */

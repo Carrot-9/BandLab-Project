@@ -1,0 +1,1 @@
+// Simulate Tamagotchi lifecycle from an egg to an adult //
