@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamagotchi Project</title>
-    <link rel="stylesheet" href="app.css">
+    <title>TamaTown</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="shortcut icon" href="public/static/Favicon/Violetchi.png" type="image/x-icon">
   
@@ -40,9 +39,9 @@
     <button class="TamagotchiEggPetButton"></button>
     <button class="TamagotchiEggPlayButton"></button>
     <section class="TamagotchiEgg">
-        <header class="TamagotchiEggTitle">Hotcaketchi</header>
+        <header id="Tamagotchi_Name" class="TamagotchiEggTitle"></header>
             <div class="TamagotchiScreen">
-                <img class="TamagotchiScreenHotcaketchi" src="public/static/Hotcaketchi.webp" alt="Hotcaketchi, the Tamagotchi Character">
+                <img id="Tamagotchi_Character" class="TamagotchiScreenCharacter" src="" alt="">
             </div>
     </section>
 </main>
@@ -50,5 +49,6 @@
 <aside class="NotificationList">
 </aside>
 </body>
-<script src="public/js/app.js"></script>
+<script src="public/js/tamagotchi.js"></script>
+<script src="public/js/tamagotchi_monthly.js"></script>
 </html>

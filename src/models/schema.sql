@@ -25,6 +25,11 @@ ALTER TABLE tamagotchi_stats
     MODIFY COLUMN friendship_level INT DEFAULT 1,
     MODIFY COLUMN weight FLOAT DEFAULT 30;
 
-
+CREATE TABLE IF NOT EXISTS tamagotchi_users (
+user_id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL, 
+email VARCHAR(255) NOT NULL;
+)
 
 
