@@ -1,8 +1,10 @@
+let d = new Date();
+let id = d.getMonth();
 
 const GetHunger = document.getElementById("FetchHungerLink");
 const GetHungerDisplay = document.getElementById("DisplayHunger");
 
-const HungerUrl = 'http://localhost:3000/api/tamagotchi/hunger/1'
+const HungerUrl = `http://localhost:3000/api/tamagotchi/hunger/${id}`
 
 GetHunger.addEventListener('click', GetHungerInfo);
 
@@ -24,7 +26,7 @@ GetHungerDisplay.textContent = `Hunger Level: ${data.hunger}/100`;
 const GetHealth = document.getElementById("FetchHealthLink");
 const GetHealthDisplay = document.getElementById("DisplayHealth");
 
-const HealthUrl = 'http://localhost:3000/api/tamagotchi/health/1'
+const HealthUrl = `http://localhost:3000/api/tamagotchi/health/${id}`
 
 GetHealth.addEventListener('click', GetHealthInfo);
 
@@ -46,7 +48,7 @@ GetHealthDisplay.textContent = `Health Level: ${data.health}/100`;
 const GetHappinessLevel = document.getElementById("FetchHappinessLink");
 const GetHappinessDisplay = document.getElementById("DisplayHappinessLevel");
 
-const HappinessUrl = 'http://localhost:3000/api/tamagotchi/happiness/1'
+const HappinessUrl = `http://localhost:3000/api/tamagotchi/happiness/${id}`
 
 GetHappinessLevel.addEventListener('click', GetHappinessInfo);
 
@@ -68,7 +70,7 @@ GetHappinessDisplay.textContent = `Happiness Level: ${data.happiness_level}/100`
 const GetFriendshipLevel = document.getElementById("FetchFriendshipLink");
 const GetFriendshipDisplay = document.getElementById("DisplayFriendshipLevel");
 
-const FriendshipUrl = 'http://localhost:3000/api/tamagotchi/friendship/1'
+const FriendshipUrl = `http://localhost:3000/api/tamagotchi/friendship/${id}`
 
 GetFriendshipLevel.addEventListener('click', GetFriendshipInfo);
 
@@ -90,7 +92,7 @@ GetFriendshipDisplay.textContent = `Friendship Level: ${data.friendship_level}/1
 const GetAge = document.getElementById("FetchAgeLink");
 const GetAgeDisplay = document.getElementById("DisplayAge");
 
-const AgeUrl = 'http://localhost:3000/api/tamagotchi/age/1'
+const AgeUrl = `http://localhost:3000/api/tamagotchi/age/${id}`
 
 GetAge.addEventListener('click', GetAgeInfo);
 
@@ -112,7 +114,7 @@ GetAgeDisplay.textContent = `Age: ${data.age} yrs`;
 const GetWeight = document.getElementById("FetchWeightLink");
 const GetWeightDisplay = document.getElementById("DisplayWeight");
 
-const WeightUrl = 'http://localhost:3000/api/tamagotchi/weight/1'
+const WeightUrl = `http://localhost:3000/api/tamagotchi/weight/${id}`
 
 GetWeight.addEventListener('click', GetWeightInfo);
 
@@ -133,7 +135,7 @@ GetWeightDisplay.textContent = `Weight: ${data.weight} oz`;
 
 const PatchFeed = document.getElementById("FeedTamagotchi");
 
-const FeedUrl = 'http://localhost:3000/api/tamagotchi/feed/1'
+const FeedUrl = `http://localhost:3000/api/tamagotchi/feed/${id}`
 
 PatchFeed.addEventListener('click', PatchFeedInfo);
 

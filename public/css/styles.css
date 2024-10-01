@@ -73,17 +73,33 @@ html, body {
   border-radius: 50% 50% 50% 50%/70% 70% 30% 30%;
 }
 
+@media (width <= 1000px) {
+  .TamagotchiEgg {
+    width: 45vw;
+  }
+  .Footer {
+    width: 15vw;
+    font-size: 2vw;
+  }
+  .MainMenu {
+    width: 15vw;
+    font-size: 0.5em;
+  }
+  .MainMenuTitle {
+    font-size: 1rem;
+  }
+}
 .TamagotchiEggTitle {
   position: absolute;
   top: 10%;
   font-family: monospace;
-  font-size: 2vw;
+  font-size: 3vw;
   color: #4483f7;
 }
 
 .TamagotchiEggFeedButton {
-  width: 3vw;
-  height: 6vh;
+  width: 4vw;
+  height: 8vh;
   background-color: #DCDCDC;
   border-radius: 50%;
   font-weight: bold;
@@ -94,8 +110,8 @@ html, body {
 }
 
 .TamagotchiEggPetButton {
-  width: 3vw;
-  height: 6vh;
+  width: 4vw;
+  height: 8vh;
   background-color: #DCDCDC;
   border-radius: 50%;
   font-weight: bold;
@@ -105,8 +121,8 @@ html, body {
 }
 
 .TamagotchiEggPlayButton {
-  width: 3vw;
-  height: 6vh;
+  width: 4vw;
+  height: 8vh;
   background-color: #DCDCDC;
   border-radius: 50%;
   font-weight: bold;
@@ -135,5 +151,5 @@ html, body {
 
 .TamagotchiScreenCharacter {
   width: 15vw;
-  height: 30vh;
+  height: 25vh;
 }/*# sourceMappingURL=styles.css.map */

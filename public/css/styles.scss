@@ -8,9 +8,9 @@ $MainMenuFontColor: #ffffff;
 // Mixins //
 
 @mixin TamagotchiEggButtonTheme {
-    width: 3vw;
-    height: 6vh;
-    background-color: #DCDCDC ;
+    width: 4vw;
+    height: 8vh;
+    background-color:#DCDCDC; ;
     border-radius: 50%;
     font-weight: bold;
     color: #444cf7;
@@ -106,11 +106,35 @@ html, body {
     border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
 }
 
+@media( width <= 1000px ) {
+    .TamagotchiEgg {
+        width: 45vw
+    }
+
+    .Footer {
+        width: 15vw;
+        font-size: 2vw;
+        
+    }
+
+    .MainMenu {
+        width: 15vw;
+        font-size: 0.5em;
+    }
+
+    .MainMenuTitle {
+
+        font-size: 1rem;
+
+    }
+
+}
+
 .TamagotchiEggTitle {
     position: absolute;
     top: 10%;
     font-family: monospace;
-    font-size: 2vw;
+    font-size: 3vw;
     color: #4483f7;
 }
 
@@ -157,6 +181,6 @@ html, body {
 
 .TamagotchiScreenCharacter {
     width: 15vw;
-    height: 30vh;
+    height: 25vh;
 }
 

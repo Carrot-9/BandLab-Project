@@ -3,7 +3,7 @@
 tamagotchi_character = document.getElementById("Tamagotchi_Character");
 tamagotchi_name = document.getElementById("Tamagotchi_Name");
 
-function foo() {
+ function foo() {
    d = new Date();
    try {
       if (d.getMonth() === 0) {
