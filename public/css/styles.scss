@@ -23,8 +23,8 @@ $MainMenuFontColor: #ffffff;
     justify-content: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width:35vw;
-    height: 90vh;
+    width: 35vw;
+    height: 90vh ;
     border: solid 10px $border-color; 
     border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
     margin-bottom: 10%;
@@ -44,7 +44,6 @@ $MainMenuFontColor: #ffffff;
 // Background //
 
  html, body {
-
     background-image: linear-gradient(30deg, #5a7fff 12%, transparent 12.5%, transparent 87%, #5a7fff 87.5%, #5a7fff), 
     linear-gradient(150deg, #5a7fff 12%, transparent 12.5%, transparent 87%, #5a7fff 87.5%, #5a7fff), 
     linear-gradient(30deg, #5a7fff 12%, transparent 12.5%, transparent 87%, #5a7fff 87.5%, #5a7fff), 
@@ -63,24 +62,25 @@ $MainMenuFontColor: #ffffff;
 }
 
 // Main Menu //
+
 .MainMenu {
     position: absolute;
-    top: 25px;
+    top: 5%;
     width: 20vw;
     height: auto;
     padding: 10px;
     border: solid 5px $border-color;
     border-radius: 10px;
     background: linear-gradient(#4483f7,#d3d342);
-    line-height: 2.5;
     font-family: monospace;
-    font-size: 1em;
     color: $MainMenuFontColor;
     }
 
 .MainMenuList {
     display: flex;
     flex-direction: column;
+    line-height: 2;
+    font-size: 1vw;
 
     a:link {
         color: $MainMenuFontColor;
@@ -98,9 +98,12 @@ $MainMenuFontColor: #ffffff;
 }
 
 .MainMenuTitle {
-    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
     color: #f7e81c;
     text-decoration: underline;
+    margin-bottom: 10%;
 
     }
 
@@ -110,6 +113,7 @@ $MainMenuFontColor: #ffffff;
     align-items: center;
     justify-content: center;
     height: auto;
+
 }
 
 .TamagotchiEgg {
@@ -119,9 +123,9 @@ $MainMenuFontColor: #ffffff;
 
 .TamagotchiEggTitle {
     position: absolute;
-    top: 10%;
+    top: 15%;
     font-family: monospace;
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: #4483f7;
 }
 
@@ -162,8 +166,8 @@ $MainMenuFontColor: #ffffff;
 }
 
 .TamagotchiScreenCharacter {
-    width: 10vw;
-    height: 20vh;
+    width: 7.5vw;
+    height: 15vh;
     animation-name: TamagotchiSpin;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -179,41 +183,4 @@ $MainMenuFontColor: #ffffff;
     }
 }
 
-// Tamagotchi Life
-
-.TamagotchiLifeEgg {
-    @include Egg();
-    background: linear-gradient(#80d4ad, #a852e0);
-}
-
-.TamagotchiLifeScreen {
-    @include Screen();
-    width: 15vw;
-    height: 30vh;
-}
-
-.TamagotchiLifeScreenCharacter {
-    width: 3.5vw;
-    height: 7vh;
-}
-
-// Media Queries
-
-
-@media( width <= 1000px ) {
-    .TamagotchiEgg {
-        width: 45vw
-    }
-
-    .MainMenu {
-        width: 15vw;
-        font-size: 0.5em;
-    }
-
-    .MainMenuTitle {
-
-        font-size: 1rem;
-
-    }
-
-}
+// Media Queries //
