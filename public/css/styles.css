@@ -50,12 +50,13 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto;
+  height: 100vh;
 }
 
 .TamagotchiEgg {
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -63,7 +64,6 @@ html, body {
   height: 90vh;
   border: solid 10px #000000;
   border-radius: 50% 50% 50% 50%/70% 70% 30% 30%;
-  margin-bottom: 10%;
   background: linear-gradient(#ADD8E6, #FFFF00);
 }
 
